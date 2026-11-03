@@ -74,11 +74,13 @@ namespace WhackAMole.PresentationLayer
             btnReset.TabIndex = 3;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += BtnResetClickEH;
             //
             // tmrStopwatch
             //
             tmrStopwatch.Enabled = true;
             tmrStopwatch.Interval = 1000;
+            tmrStopwatch.Tick += TmrStopwatchTickEH;
             //
             // FrmStopwatch
             //
