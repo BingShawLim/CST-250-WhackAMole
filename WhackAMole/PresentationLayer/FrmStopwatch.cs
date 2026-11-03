@@ -13,6 +13,8 @@ namespace WhackAMole.PresentationLayer
     {
         // Class level variable to hold the timers time
         private TimeSpan _timeElapsed = new TimeSpan();
+        // Create a new Random object to generate numbers
+        private Random _random = new Random();
 
         /// <summary>
         /// Default constructor for the stopwatch form
@@ -49,6 +51,7 @@ namespace WhackAMole.PresentationLayer
         /// <summary>
         /// Tick Event Handler for tmrStopwatch
         /// Updates the _timeElapsed variable and the label
+        /// Moves btnTarget every three seconds
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,9 +61,23 @@ namespace WhackAMole.PresentationLayer
             int interval = tmrStopwatch.Interval;
             // Add the timers interval to _timeElapsed
             _timeElapsed = _timeElapsed.Add(TimeSpan.FromMilliseconds(interval));
-            // Show the _timeElapsed on the label
+            // Show the elapsedTime on the label
             lblTimeElapsed.Text = _timeElapsed.ToString();
-        }
+            // Check if it is time to move the target button
+            if (_timeElapsed.Seconds % 3 == 0)
+            {
+                // Select a new location for the top of btnTarget
+                // Randomly generate a location for the top of the button
+                // between 0 and the form height minus the button height
+                btnTarget.Top = _random.Next(0, this.Height - btnTarget.Height);
+                // Select a new location for the left side of btnTarget
+                btnTarget.Left = _random.Next(0, this.Width - btnTarget.Width);
+                // Get random numbers for the RGB color for the button
+                btnTarget.BackColor = Color.FromArgb(_random.Next(0, 256), _random.Next(0, 256), _random.Next(0, 256));
+                // Set the target to be visible
+                btnTarget.Visible = true;
+            }
+        } // End of TmrStopwatchTickEH
 
         /// <summary>
         /// Click Event Handler for btnReset
@@ -76,6 +93,17 @@ namespace WhackAMole.PresentationLayer
             _timeElapsed = new TimeSpan();
             // Show the reset time on the label
             lblTimeElapsed.Text = _timeElapsed.ToString();
+        }
+
+        /// <summary>
+        /// Click Event Handler for btnTarget to hide the target
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnTargetClickEH(object sender, EventArgs e)
+        {
+            // Hide the target
+            btnTarget.Visible = false;
         }
     }
 }

@@ -91,6 +91,7 @@ namespace WhackAMole.PresentationLayer
             btnTarget.TabIndex = 4;
             btnTarget.Text = "Target";
             btnTarget.UseVisualStyleBackColor = true;
+            btnTarget.Click += BtnTargetClickEH;
             //
             // FrmStopwatch
             //
