@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhackAMole", "WhackAMole\WhackAMole.csproj", "{6B1F2C3A-7D4E-4F5A-9B8C-1D2E3F4A5B6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhackAMoleClassLibrary", "WhackAMoleClassLibrary\WhackAMoleClassLibrary.csproj", "{470067FA-8C72-4265-8C5B-968071A6B0F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhackAMoleClassLibrary.Tests", "WhackAMoleClassLibrary.Tests\WhackAMoleClassLibrary.Tests.csproj", "{1ABE1D3A-4A3F-4885-9FF6-C1ADB1FB366C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6B1F2C3A-7D4E-4F5A-9B8C-1D2E3F4A5B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B1F2C3A-7D4E-4F5A-9B8C-1D2E3F4A5B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B1F2C3A-7D4E-4F5A-9B8C-1D2E3F4A5B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470067FA-8C72-4265-8C5B-968071A6B0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470067FA-8C72-4265-8C5B-968071A6B0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470067FA-8C72-4265-8C5B-968071A6B0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470067FA-8C72-4265-8C5B-968071A6B0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ABE1D3A-4A3F-4885-9FF6-C1ADB1FB366C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ABE1D3A-4A3F-4885-9FF6-C1ADB1FB366C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ABE1D3A-4A3F-4885-9FF6-C1ADB1FB366C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ABE1D3A-4A3F-4885-9FF6-C1ADB1FB366C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
