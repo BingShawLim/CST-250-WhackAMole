@@ -48,7 +48,7 @@ namespace WhackAMole.PresentationLayer
 
         /// <summary>
         /// Click Event Handler for btnStart
-        /// Starts a new game if the last one is over, then starts the timer
+        /// Starts a new game if the last one is over, then starts (or resumes) the timer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -63,8 +63,11 @@ namespace WhackAMole.PresentationLayer
                 ApplyLevelSettings();
                 UpdateLabels();
             }
-            // Show the target right away, then start the timer
-            MoveButton(btnTarget);
+            // Show the target right away if none is showing; a paused target stays where it was
+            if (!btnTarget.Visible)
+            {
+                MoveButton(btnTarget);
+            }
             tmrStopwatch.Start();
         }
 
