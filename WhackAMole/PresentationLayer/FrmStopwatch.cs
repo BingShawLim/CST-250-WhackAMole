@@ -14,10 +14,8 @@ namespace WhackAMole.PresentationLayer
 {
     public partial class FrmStopwatch : Form
     {
-        // Space kept for the labels at the top and the buttons at the bottom of the form
+        // Space between the controls and the edges of the form
         private const int EdgeMargin = 12;
-        private const int TopBarHeight = 52;
-        private const int BottomBarHeight = 60;
 
         // Class level variable to hold the timers time
         private TimeSpan _timeElapsed = new TimeSpan();
@@ -310,14 +308,17 @@ namespace WhackAMole.PresentationLayer
         } // End of EndGame method
 
         /// <summary>
-        /// The space between the labels at the top and the buttons at the bottom
+        /// The space between the labels at the top and the buttons at the bottom.
+        /// Measured from the controls themselves so it works at any display scaling.
         /// </summary>
         /// <returns>The play area rectangle</returns>
         private Rectangle GetPlayArea()
         {
+            int top = EdgeMargin + lblTimeElapsed.Height + EdgeMargin;
+            int bottom = ClientSize.Height - EdgeMargin - btnStart.Height - EdgeMargin;
             int width = Math.Max(1, ClientSize.Width - (2 * EdgeMargin));
-            int height = Math.Max(1, ClientSize.Height - TopBarHeight - BottomBarHeight);
-            return new Rectangle(EdgeMargin, TopBarHeight, width, height);
+            int height = Math.Max(1, bottom - top);
+            return new Rectangle(EdgeMargin, top, width, height);
         }
 
         /// <summary>
